@@ -268,6 +268,37 @@
         navToggle.setAttribute('aria-expanded', isOpen);
       });
     }
+
+    // Form Submission "Success" Simulation
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Duke u dërguar...';
+        
+        setTimeout(() => {
+          // Replace form with success message
+          const parent = contactForm.parentElement;
+          parent.innerHTML = `
+            <div class="contact-success" style="text-align: center; padding: 3rem 1rem; animation: fadeIn 0.5s ease-out;">
+              <div style="font-size: 5rem; color: #22c55e; margin-bottom: 1.5rem;">
+                <i class="fas fa-circle-check"></i>
+              </div>
+              <h2 style="margin-bottom: 1rem;">Mesazhi u dërgua!</h2>
+              <p style="color: var(--muted); font-size: 1.125rem; max-width: 400px; margin: 0 auto 2rem;">
+                Faleminderit që na kontaktuat. Ne do t'ju kthejmë përgjigje brenda 24 orëve.
+              </p>
+              <button onclick="location.reload()" class="btn btn-outline" style="font-size: 1rem; padding: 0.75rem 1.5rem;">Dërgo një tjetër</button>
+            </div>
+          `;
+        }, 1500);
+      });
+    }
   </script>
 </body>
 </html>
