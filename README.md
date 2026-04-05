@@ -1,13 +1,13 @@
-# Rolling Fire Kitchen - Food Truck Website Template
+# DOEL Meat Industry - Professional Website
 
-A bold, street-food-inspired website template designed for food trucks, mobile kitchens, and street food vendors. Built with pure HTML5 and CSS3.
+A premium, bold website designed for DOEL Meat Industry. Built with pure HTML5 and CSS3 for high performance and professional presentation.
 
 ## Pages Included
 
-- **Home** (`index.html`) - Hero, menu highlights, about snippet, weekly schedule, photo grid, testimonials, CTA
-- **About** (`about.html`) - Origin story, crew bios, truck details, philosophy
-- **Menu** (`services.html`) - Full menu with prices, sides & drinks, catering packages
-- **Contact** (`contact.html`) - Catering inquiry form, contact info, schedule, FAQ
+- **Ballina** (`index.html`) - Hero, and highlights, About snippet, schedule, and CTA
+- **Rreth Nesh** (`about.html`) - Origin story, technology, philosophy
+- **Katalogu** (`services.html`) - Interactive flipbook catalog of premium meat products
+- **Kontakt** (`contact.html`) - Contact form, business info, FAQ
 
 ## Quick Start
 
