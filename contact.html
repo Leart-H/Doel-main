@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | DOEL Meat Industry</title>
+  <meta name="description" content="Na kontaktoni për porosi me shumicë, bashkëpunime, ose informacion rreth produkteve DOEL.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="DOEL Meat Industry" class="logo-img">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Katalog</a>
+        <a href="partners.html" class="nav-link">Brendet</a>
+        <a href="about.html" class="nav-link">Rreth Nesh</a>
+        <a href="contact.html" class="nav-link active">Kontakt</a>
+      </nav>
+      <div class="lang-switcher" style="display: flex; gap: 0.5rem; align-items: center; font-family: var(--font-heading); margin-left: auto; margin-right: 1.5rem; font-size: 1.125rem; letter-spacing: 0.05em;">
+        <a href="contact.html" style="color: var(--primary);">AL</a>
+        <span style="color: var(--gray);">|</span>
+        <a href="contact-en.html" style="color: var(--white); opacity: 0.7;">EN</a>
+      </div>
+      <a href="contact.html" class="btn btn-primary header-cta">Kontakt</a>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <p class="section-label"><i class="fas fa-map-location-dot"></i> Na Kontaktoni</p>
+        <h1>Jemi Pranë Jush.<br>Në Çdo Kohë.</h1>
+        <p>Nëse doni të dini më shumë për produktet tona apo të kërkoni bashkëpunim për biznesin tuaj. Jemi gjithmonë të hapur për klientët tanë.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form + Info -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-section">
+          <h2>Formular Kontakti</h2>
+          <p>Plotësoni formën e mëposhtme me të dhënat dhe ne do t'ju kthejmë përgjigje sa më shpejt me detajet përkatëse.</p>
+          <form class="contact-form" action="#" method="post">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Emri Juaj</label>
+                <input type="text" id="name" name="name" placeholder="Emri i plotë" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="ju@email.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Telefoni</label>
+                <input type="tel" id="phone" name="phone" placeholder="+383 44 000 000">
+              </div>
+              <div class="form-group">
+                <label for="event-type">Lloji i Kërkesës</label>
+                <select id="event-type" name="event-type" required>
+                  <option value="" disabled selected>Zgjidhni arsyen</option>
+                  <option value="corporate">Porosi Biznesi (B2B)</option>
+                  <option value="wedding">Restorant / Fast-Food</option>
+                  <option value="birthday">Rrjet Supermarketi</option>
+                  <option value="festival">Informacion mbi Produktin</option>
+                  <option value="other">Tjetër</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="event-date">Data e Fillimit (Për kontrata)</label>
+                <input type="date" id="event-date" name="event-date">
+              </div>
+              <div class="form-group">
+                <label for="guest-count">Sasia e Përafërt (në KG)</label>
+                <input type="number" id="guest-count" name="guest-count" placeholder="Sasia">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Mesazhi / Detaje Shtesë</label>
+              <textarea id="message" name="message" placeholder="Na shkruani çfarëdo detaji shtesë lidhur me bashkëpunimin apo pyetjen tuaj..." rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Dërgo Kërkesën</button>
+          </form>
+        </div>
+
+        <div class="contact-info-section">
+          <h2>Më Vështrim</h2>
+          <div class="contact-info-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h4>Telefoni</h4>
+              <p>+383 44 641 259</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>E-mail</h4>
+              <p>info@doel-ks.com</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Koha e Përgjigjes</h4>
+              <p>Kthejmë përgjigje përmes e-mailit brenda 24 orëve. Për gjëra urgjente apo porosi të menjëhershme, na telefononi.</p>
+            </div>
+          </div>
+
+          <div class="contact-social">
+            <h4>Rrjetet Tona Sociale</h4>
+            <div class="contact-social-links">
+              <a href="https://www.facebook.com/doelindustry" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+
+          <div class="contact-schedule">
+            <h4>Orari i Administratës e Tregtisë</h4>
+            <ul class="schedule-list">
+              <li><strong>E Hënë - E Premte</strong> 08:00 - 16:00</li>
+              <li><strong>E Shtunë</strong> 08:00 - 15:00</li>
+              <li><strong>E Diel</strong> Pushim / Mbyllur</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"><i class="fas fa-circle-question"></i> FAQ</p>
+        <h2 class="section-title">Pyetjet e Shpeshta</h2>
+        <div class="fire-divider">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>A bëni furnizime me shumicë?</h3>
+          <p>Po, ne jemi të fokusuar kryesisht te shitjet me shumicë për restorante, supermarkete dhe subjekte biznesi tjera. Bëjmë kontrata të lira furnizimi sipas kërkesave specifike të tregtarëve.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Ku ndodhen pikat e shitjes me pakicë?</h3>
+          <p>Dyqanet tona ndodhen në qendrat kryesore dhe pikat strategjike të ndryshme lokale. Ofrimi i produkteve të freskëta në shitje pakice bëhet nga mëngjesi deri në mbrëmje vonë.</p>
+        </div>
+        <div class="faq-item">
+          <h3>A keni produkte me përmbajtje perimesh/vegjetariane?</h3>
+          <p>Katalogu ynë aktualisht është i specializuar rreptësisht drejt llojeve thelbësore të mishi, në theks viçi, pule dhe derri, së bashku me përzierje të specializuara suxhuku e sallami.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Sa kohë duhet të presim dërgesat me shumicë?</h3>
+          <p>Pas lidhjes së kontratës me një minimum volume, dërgesat do të operohen 2 deri në 3 herë në javë, ose të përditshme në varësi të rrethit apo degës ku gjendeni. E gjithë lëvizja bëhet me frigoriferë të ruajtjes sipas rregullit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ta Bëjmë Këtë të Ndodhë</h2>
+        <p>Ne jemi mjaftueshëm të gatshëm që të bashkojmë forcën tonë logjistike e produktive me ambiciet e klientëve tanë. Na zgjidhni si partnerin tuaj më të mirë.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="tel:38344641259" class="btn btn-primary"><i class="fas fa-phone"></i> Telefono Tani</a>
+          <a href="services.html" class="btn btn-outline-light">Shiko Katalogun</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="DOEL Meat Industry" class="logo-img">
+          </a>
+          <h4 style="color: var(--white); margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1.25rem;">Bëhuni Partneri Ynë</h4>
+          <p>Në një treg ku cilësia dhe saktësia janë gjithçka, partneriteti me DOEL S.Q ju jep sigurinë që ju nevojitet. Ne nuk jemi thjesht një depo, por krahu juaj i djathtë në logjistikë dhe furnizim.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/doelindustry" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Lidhje të Shpejta</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Katalog</a></li>
+            <li><a href="partners.html">Brendet</a></li>
+            <li><a href="about.html">Rreth Nesh</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Katalogu</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Suxhuk Kombëtar</a></li>
+            <li><a href="services.html">Sallam Pule</a></li>
+            <li><a href="services.html">Proshutë Viçi</a></li>
+            <li><a href="services.html">Mish i Grirë</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+         <h4>Kontakt</h4>
+          <p>
+            <i class="fas fa-phone"></i>
+            +383 44 641 259
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            info@doel-ks.com
+          </p>
+          <p>
+            <i class="fab fa-facebook"></i>
+            @doelindustry
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 DOEL Meat Industry. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('nav-open');
+        navToggle.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+  </script>
+</body>
+</html>

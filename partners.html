@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brendet Tanë | DOEL Meat Industry</title>
+  <meta name="description" content="Brendet dhe materialet cilësore që DOEL Meat Industry përdor për të garantuar shijen dhe freskinë e produkteve tona.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 3rem 0;
+    }
+    .partner-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 2px solid var(--gray-light);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .partner-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(200, 16, 46, 0.12);
+    }
+    .logo-box {
+      width: 100%;
+      height: 140px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 6px;
+      margin-bottom: 0;
+      transition: transform 0.3s ease;
+    }
+    .logo-box i {
+      font-size: 3.5rem;
+      color: var(--primary);
+      opacity: 0.8;
+    }
+    .logo-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+    .partner-card:hover .logo-box img { filter: grayscale(0%); }
+    .partner-card:hover .logo-box { transform: scale(1.05); }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="DOEL Meat Industry" class="logo-img"></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Katalog</a>
+        <a href="partners.html" class="nav-link active">Brendet</a>
+        <a href="about.html" class="nav-link">Rreth Nesh</a>
+        <a href="contact.html" class="nav-link">Kontakt</a>
+      </nav>
+      <div class="lang-switcher" style="display:flex;gap:.5rem;align-items:center;font-family:var(--font-heading);margin-left:auto;margin-right:1.5rem;font-size:1.125rem;letter-spacing:.05em;">
+        <a href="partners.html" style="color:var(--primary)">AL</a>
+        <span style="color:var(--gray)">|</span>
+        <a href="partners-en.html" style="color:var(--white);opacity:.7">EN</a>
+      </div>
+      <a href="contact.html" class="btn btn-primary header-cta">Kontakt</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <p class="section-label"><i class="fas fa-certificate"></i> Cilësia Jonë</p>
+        <h1>Brendet që Përdorim.</h1>
+        <p>DOEL Meat Industry bashkëpunon vetëm me emrat më të besuar për të siguruar që çdo produkt në tryezën tuaj të jetë i klasit të parë.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"><i class="fas fa-shield-heart"></i> Partnerët e Shijes</p>
+        <h2 class="section-title text-center">Garantuesit e Cilësisë</h2>
+        <div class="fire-divider"><span></span><span></span><span></span></div>
+      </div>
+
+      <div class="partners-grid">
+        <!-- Brand 1: Apetit Example -->
+        <div class="partner-card">
+          <div class="logo-box">
+             <!-- Replace with images/apetit.png when uploaded -->
+             <img src="images/apetit.jpg" alt="Apetit Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+             <i class="fas fa-industry" style="display:none;"></i>
+             <div class="fallback-icon" style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--primary);"></div>
+          </div>
+        </div>
+
+        <!-- Brand 2: Kotanyi -->
+        <div class="partner-card">
+          <div class="logo-box">
+             <img src="images/seara.png" alt="Kotanyi Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+             <i class="fas fa-pepper-hot" style="display:none;"></i>
+             <div class="fallback-icon" style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--primary);"></div>
+          </div>
+        </div>
+
+       
+        <div class="partner-card">
+          <div class="logo-box">
+             <img src="images/buda.png" alt="Cryovac Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+             <i class="fas fa-box-open" style="display:none;"></i>
+             <div class="fallback-icon" style="font-family: var(--font-heading); font-size: 2rem; color: var(--primary);"></div>
+          </div>
+        </div>
+        
+         <div class="partner-card">
+          <div class="logo-box">
+             <img src="images/primark-logo-768x336.png" alt="Cryovac Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+             <i class="fas fa-box-open" style="display:none;"></i>
+             <div class="fallback-icon" style="font-family: var(--font-heading); font-size: 2rem; color: var(--primary);"></div>
+          </div>
+        </div>
+
+         <div class="partner-card">
+          <div class="logo-box">
+             <img src="images/myday.png" alt="Cryovac Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+             <i class="fas fa-box-open" style="display:none;"></i>
+             <div class="fallback-icon" style="font-family: var(--font-heading); font-size: 2rem; color: var(--primary);"></div>
+          </div>
+        </div>
+
+         <div class="partner-card">
+          <div class="logo-box">
+             <img src="images/farmfrites.png" alt="Cryovac Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+             <i class="fas fa-box-open" style="display:none;"></i>
+             <div class="fallback-icon" style="font-family: var(--font-heading); font-size: 2rem; color: var(--primary);"></div>
+          </div>
+        </div>
+ <div class="partner-card">
+          <div class="logo-box">
+             <img src="images/erzeni.png" alt="Cryovac Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+             <i class="fas fa-box-open" style="display:none;"></i>
+             <div class="fallback-icon" style="font-family: var(--font-heading); font-size: 2rem; color: var(--primary);"></div>
+          </div>
+        </div>
+ <div class="partner-card">
+          <div class="logo-box">
+             <img src="images/amg.png" alt="Cryovac Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+             <i class="fas fa-box-open" style="display:none;"></i>
+             <div class="fallback-icon" style="font-family: var(--font-heading); font-size: 2rem; color: var(--primary);"></div>
+          </div>
+        </div>
+
+       
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><img src="images/logo.png" alt="DOEL Meat Industry" class="logo-img"></a>
+          <p>Besimi dhe cilësia janë shtyllat e çdo produkti që ne prodhojmë. Bashkëpunojmë vetëm me më të mirët.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/doelindustry" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Lidhje</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Katalog</a></li>
+            <li><a href="partners.html">Brendet</a></li>
+            <li><a href="about.html">Rreth Nesh</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Kontakt</h4>
+          <p>
+            <i class="fas fa-phone"></i>
+            +383 44 641 259
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            info@doel-ks.com
+          </p>
+          <p>
+            <i class="fab fa-facebook"></i>
+            @doelindustry
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 DOEL Meat Industry. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    if(navToggle) {
+      navToggle.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        navToggle.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog | DOEL Meat Industry</title>
+  <meta name="description"
+    content="The DOEL Meat Industry product catalog. Suxhuk, Sausage, Prosciutto, and premium meat products. Wholesale and retail supply solutions.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Nunito:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ── Flipbook ── */
+    .flipbook-section {
+      padding: 5rem 0;
+    }
+
+    .flipbook-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 2rem 0;
+    }
+
+    .book-scene {
+      perspective: 3500px;
+    }
+
+    .book {
+      position: relative;
+      display: flex;
+      width: min(780px, 85vw);
+      height: calc(min(780px, 85vw) * 0.66);
+      filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.45));
+    }
+
+    /* Pages */
+    .book-page {
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+    }
+
+    .book-page-left {
+      border-radius: 6px 0 0 6px;
+      box-shadow: inset -10px 0 18px rgba(0, 0, 0, 0.07);
+    }
+
+    .book-page-right {
+      border-radius: 0 6px 6px 0;
+      box-shadow: inset 10px 0 18px rgba(0, 0, 0, 0.07);
+    }
+
+    .book-page img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 1rem;
+      display: block;
+      background: #fff;
+    }
+
+    /* Spine */
+    .book-spine {
+      width: 18px;
+      flex-shrink: 0;
+      background: linear-gradient(to right, #1a1a1a 0%, #C8102E 40%, #9B0D24 50%, #C8102E 60%, #1a1a1a 100%);
+      box-shadow: 0 0 14px rgba(0, 0, 0, 0.65);
+      z-index: 5;
+    }
+
+    /* Flip element */
+    .book-flip {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      transform-style: preserve-3d;
+      display: none;
+      z-index: 20;
+    }
+
+    .book-flip.side-right {
+      right: 0;
+      transform-origin: left center;
+    }
+
+    .book-flip.side-left {
+      left: 0;
+      transform-origin: right center;
+    }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .flip-face img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 1rem;
+      background: #fff;
+    }
+
+    .flip-face-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Nav buttons */
+    .book-nav {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(200, 16, 46, 0.35);
+    }
+
+    .book-nav:hover:not(:disabled) {
+      transform: scale(1.12);
+      box-shadow: 0 6px 24px rgba(200, 16, 46, 0.5);
+    }
+
+    .book-nav:disabled {
+      opacity: 0.25;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Dots */
+    .book-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.5rem;
+    }
+
+    .book-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--gray-light);
+      border: 2px solid var(--gray);
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 0;
+    }
+
+    .book-dot.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: scale(1.25);
+    }
+
+    .book-counter {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* Catering packages override for dark section */
+    .section-dark .catering-package {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 4px solid var(--accent);
+    }
+
+    .section-dark .catering-package:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .section-dark .catering-package h3 {
+      color: var(--accent);
+    }
+
+    .section-dark .catering-package p {
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0;
+      font-size: 0.9375rem;
+    }
+
+    /* Closed book states */
+    .book.is-closed {
+      width: min(390px, 85vw);
+    }
+
+    .book.is-closed .book-page-left,
+    .book.is-closed .book-spine,
+    .book.is-closed .book-page-right {
+      display: none;
+    }
+
+    .book.is-closed-front .book-page-right {
+      display: block;
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .book.is-closed-back .book-page-left {
+      display: block;
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    /* Mobile: single page */
+    @media (max-width: 600px) {
+
+      .book-page-left,
+      .book-spine {
+        display: none;
+      }
+
+      .book-page-right {
+        width: 100%;
+        border-radius: 6px;
+      }
+
+      .book {
+        width: min(360px, 90vw) !important;
+      }
+
+      .flipbook-wrapper {
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index-en.html" class="logo"><img src="images/logo.png" alt="DOEL Meat Industry" class="logo-img"></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="index-en.html" class="nav-link">Home</a>
+        <a href="services-en.html" class="nav-link active">Catalog</a>
+        <a href="partners.html" class="nav-link">Brands</a>
+        <a href="about-en.html" class="nav-link">About Us</a>
+        <a href="contact-en.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="lang-switcher"
+        style="display:flex;gap:.5rem;align-items:center;font-family:var(--font-heading);margin-left:auto;margin-right:1.5rem;font-size:1.125rem;letter-spacing:.05em;">
+        <a href="services.html" style="color:var(--white);opacity:.7">AL</a>
+        <span style="color:var(--gray)">|</span>
+        <a href="services-en.html" style="color:var(--primary)">EN</a>
+      </div>
+      <a href="contact-en.html" class="btn btn-primary header-cta">Contact</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <p class="section-label"><i class="fas fa-fire-flame-curved"></i> The Catalog</p>
+        <h1>All Our Products.<br>Superior Quality.</h1>
+        <p>Every product in this catalog is produced with the highest quality raw materials and passes through the
+          strictest hygiene and European standard controls. We are committed to perfection in taste.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flipbook Catalog -->
+  <section class="flipbook-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"><i class="fas fa-book-open"></i> The Catalog</p>
+        <h2 class="section-title">Browse Our Products</h2>
+        <div class="fire-divider"><span></span><span></span><span></span></div>
+        <p class="section-subtitle" style="color:var(--muted)">Click the arrows or use ← → keys to browse the catalog as
+          a book.</p>
+      </div>
+
+      <div class="flipbook-wrapper">
+        <button class="book-nav" id="btnPrev" onclick="flipPrev()" aria-label="Previous page">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="book-scene">
+          <div class="book" id="theBook">
+            <div class="book-page book-page-left">
+              <img id="imgLeft" src="" alt="DOEL Product">
+            </div>
+            <div class="book-spine"></div>
+            <div class="book-page book-page-right">
+              <img id="imgRight" src="images/doel.png" alt="DOEL Product">
+            </div>
+            <!-- Animated flip layer -->
+            <div class="book-flip" id="bookFlip">
+              <div class="flip-face flip-face-front"><img id="ffFront" src="" alt=""></div>
+              <div class="flip-face flip-face-back"><img id="ffBack" src="" alt=""></div>
+            </div>
+          </div>
+        </div>
+
+        <button class="book-nav" id="btnNext" onclick="flipNext()" aria-label="Next page">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="book-dots" id="bookDots"></div>
+      <div class="book-counter" id="bookCounter"></div>
+    </div>
+  </section>
+
+  <!-- Wholesale -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="catering-content">
+        <div class="catering-text">
+          <p class="section-label"><i class="fas fa-boxes-stacked"></i> Wholesale</p>
+          <h2>We Supply Your Business</h2>
+          <p>Do you have a restaurant, market, or large-scale operation? We offer wholesale and retail supply agreements
+            to meet the needs of even the most demanding businesses.</p>
+          <p>Contact our dedicated business line. Our daily capacity guarantees fulfillment of your required quantities
+            without any delay.</p>
+          <a href="contact-en.html" class="btn btn-outline-light" style="margin-top:1.5rem">Get Your Quote Now</a>
+        </div>
+        <div class="catering-packages">
+          <div class="catering-package">
+            <h3>Small Business Package</h3>
+            <p>Suitable for secondary trade and small fast-food operations. Choose from 20 kg and up of fresh meat
+              according to your needs.</p>
+          </div>
+          <div class="catering-package">
+            <h3>Daily Supply</h3>
+            <p>For large restaurants, shopping centers, or medium businesses with a continuous daily or weekly need.</p>
+          </div>
+          <div class="catering-package">
+            <h3>Supermarket Network</h3>
+            <p>Mass supply for supermarkets with the full assortment. Offers are discussed in advance and goods are
+              prepared exclusively for you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Would You Like to Order?</h2>
+        <p>Contact us now for any individual or wholesale inquiries. The country's top flavors await you.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="contact-en.html" class="btn btn-primary">Visit Us</a>
+          <a href="contact-en.html" class="btn btn-outline-light">Place an Order</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index-en.html" class="logo"><img src="images/logo.png" alt="DOEL Meat Industry" class="logo-img"></a>
+          <h4 style="color:var(--white);margin-bottom:.5rem;font-family:var(--font-heading);font-size:1.25rem">Become
+            Our Partner</h4>
+          <p>In a market where quality and precision are everything, partnering with DOEL S.Q gives you the assurance
+            you need. We are not just a warehouse, but your right arm in logistics and supply.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/doelindustry" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index-en.html">Home</a></li>
+            <li><a href="services-en.html">Catalog</a></li>
+            <li><a href="about-en.html">About Us</a></li>
+            <li><a href="contact-en.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="services-en.html">National Suxhuk</a></li>
+            <li><a href="services-en.html">Chicken Sausage</a></li>
+            <li><a href="services-en.html">Beef Prosciutto</a></li>
+            <li><a href="services-en.html">Ground Meat</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>
+            <i class="fas fa-phone"></i>
+            +383 44 641 259
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            info@doel-ks.com
+          </p>
+          <p>
+            <i class="fab fa-facebook"></i>
+            @doelindustry
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 DOEL Meat Industry. All rights reserved.</p>
+        <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('nav-open');
+        navToggle.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', open);
+      });
+    }
+
+    // ── Flipbook ──────────────────────────────────────────────
+    (function () {
+      const IMGS = [
+        null,
+        'images/doel.png',
+        'images/doel2-o.png',
+        'images/doel2-1.png',
+        'images/doel3-o.png',
+        'images/doel3-1.png',
+        'images/doel4-o.png',
+        'images/doel4-1.png',
+        'images/doel5-o.png',
+        'images/doel5-1.png',
+        'images/doel6-o.png',
+        'images/doel6-1.png',
+        'images/doel7-o.png',
+        'images/doel7-1.png',
+        'images/doel8-o.png',
+        'images/doel8-1.png',
+        'images/del.png'
+      ];
+      const TOTAL = IMGS.length;
+      const MS = 650;
+
+      let spread = 0; // left-page index (always even)
+      let busy = false;
+
+      const elBook = document.getElementById('theBook');
+      const elL = document.getElementById('imgLeft');
+      const elR = document.getElementById('imgRight');
+      const elFlip = document.getElementById('bookFlip');
+      const elFF = document.getElementById('ffFront');
+      const elFB = document.getElementById('ffBack');
+      const elPrev = document.getElementById('btnPrev');
+      const elNext = document.getElementById('btnNext');
+      const elDots = document.getElementById('bookDots');
+      const elCnt = document.getElementById('bookCounter');
+
+      // Build dots
+      const nSpreads = Math.ceil(TOTAL / 2);
+      for (let i = 0; i < nSpreads; i++) {
+        const d = document.createElement('button');
+        d.className = 'book-dot';
+        d.setAttribute('aria-label', (i === 0) ? 'Cover' : 'Page ' + (i * 2));
+        d.addEventListener('click', () => { if (!busy) goTo(i * 2); });
+        elDots.appendChild(d);
+      }
+
+      function src(i) { return (i >= 0 && i < TOTAL) ? IMGS[i] : null; }
+
+      function goTo(s) {
+        spread = s;
+        elL.src = src(spread) || '';
+        elL.style.visibility = src(spread) ? '' : 'hidden';
+        elR.src = src(spread + 1) || '';
+        elR.style.visibility = src(spread + 1) ? '' : 'hidden';
+        refresh();
+      }
+
+      function refresh() {
+        elPrev.disabled = spread <= 0;
+        elNext.disabled = spread + 2 >= TOTAL;
+
+        const actualTotal = TOTAL - 1; // excluding leading null
+
+        // Closed book logic
+        elBook.classList.remove('is-closed', 'is-closed-front', 'is-closed-back');
+        if (spread === 0) {
+          elBook.classList.add('is-closed', 'is-closed-front');
+          elCnt.textContent = 'Cover';
+        } else if (spread >= TOTAL - 1 || (spread === TOTAL - 2 && !src(spread + 1))) {
+          // If we are at the last page and it's alone
+          elBook.classList.add('is-closed', 'is-closed-back');
+          elCnt.textContent = 'End';
+        } else {
+          const l = spread, r = spread + 1;
+          elCnt.textContent = 'Page ' + l + (r <= actualTotal ? '–' + r : '') + ' of ' + actualTotal;
+        }
+
+        elDots.querySelectorAll('.book-dot').forEach((d, i) =>
+          d.classList.toggle('active', i === spread / 2)
+        );
+      }
+
+      function doFlip(flipClass, startDeg, endDeg, frontSrc, backSrc, hiddenEl, onDone) {
+        elFF.src = frontSrc || '';
+        elFB.src = backSrc || '';
+        hiddenEl.style.visibility = 'hidden';
+        elFlip.className = 'book-flip ' + flipClass;
+        elFlip.style.display = 'block';
+        elFlip.style.transition = 'none';
+        elFlip.style.transform = 'rotateY(' + startDeg + 'deg)';
+        void elFlip.offsetWidth;
+        elFlip.style.transition = 'transform ' + MS + 'ms ease-in-out';
+        elFlip.style.transform = 'rotateY(' + endDeg + 'deg)';
+        setTimeout(() => {
+          elFlip.style.display = 'none';
+          elFlip.style.transform = '';
+          elFlip.style.transition = '';
+          hiddenEl.style.visibility = '';
+          onDone();
+          refresh();
+          busy = false;
+        }, MS);
+      }
+
+      window.flipNext = function () {
+        if (busy || spread + 2 >= TOTAL) return;
+        busy = true;
+        const next = spread + 2;
+        doFlip(
+          'side-right', 0, -180,
+          src(spread + 1),  // front = current right page
+          src(next),        // back  = next left page
+          elR,
+          () => { spread = next; elL.src = src(spread) || ''; elR.src = src(spread + 1) || ''; elL.style.visibility = src(spread) ? '' : 'hidden'; elR.style.visibility = src(spread + 1) ? '' : 'hidden'; }
+        );
+      };
+
+      window.flipPrev = function () {
+        if (busy || spread <= 0) return;
+        busy = true;
+        const prev = spread - 2;
+        doFlip(
+          'side-left', -180, 0,
+          src(prev + 1),  // front = previous right page (revealed at end)
+          src(spread),    // back  = current left page (shown at start)
+          elL,
+          () => { spread = prev; elL.src = src(spread) || ''; elR.src = src(spread + 1) || ''; elL.style.visibility = src(spread) ? '' : 'hidden'; elR.style.visibility = src(spread + 1) ? '' : 'hidden'; }
+        );
+      };
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') flipNext();
+        if (e.key === 'ArrowLeft') flipPrev();
+      });
+
+      goTo(0);
+    })();
+  </script>
+</body>
+
+</html>
